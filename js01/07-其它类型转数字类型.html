@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>其它类型转数字类型</title>
+</head>
+<body>
+<script>
+    // 1. Number 强制类型转换
+    var str = 'abc';
+    var isRight = true;
+
+    // console.log(Number(str)); // NaN
+    // console.log(Number(isRight));
+
+    // console.log(Number('123'));
+    // console.log(Number('123abc'));// Number进行强制类型转换的时候，如果字符串中有一个 字符不是数字的，那么值是NaN
+
+    // 2.parseInt 转换成整数类型
+
+    console.log(parseInt(str));
+    // parseInt 无法把布尔类型 转换成 数值
+    console.log(parseInt(isRight));
+
+    console.log(parseInt('123'));
+    // parseInt在转换的时候，遇到数字则转换成数字，遇到非数字，则返回
+    console.log(parseInt('123abc')); //
+
+
+    // 3.parseFloat  用法跟parseInt 相似
+    console.log(parseFloat('123.333.221.22')); // 123.333
+
+
+    // 4. 取正 或取负  或者 进行 数学运算  隐式转换
+    console.log(+'123');
+    console.log(-'555');
+    console.log(+'abc');
+    console.log(+'123abc');
+    console.log('444'-0);
+
+
+</script>
+</body>
+</html>

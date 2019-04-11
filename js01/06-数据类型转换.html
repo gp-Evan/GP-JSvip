@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>数据类型转换</title>
+</head>
+<body>
+<script>
+    // var age = 18;
+    // var name  = 'zs';
+    // var isRight = true;
+    // var a;
+    // var b = null;
+    // 五种数据类型在 console中打印的样式
+    // console.log(age);
+    // console.log(name);
+    // console.log(isRight);
+    // console.log(a);
+    // console.log(b);
+
+
+    // 转换成字符串的方法
+    // 1.直接调用toString方法
+    var num = 18;
+    var isRight = true;
+    var a;
+
+    // console.log(typeof num.toString());
+    // console.log(typeof irRight.toString());
+
+    // null 和 undefined方法没有 toString方法
+    // console.log(a.toString());
+
+
+    // 2. String() 强制类型转换
+    //console.log(typeof String(num));
+    //console.log(typeof String(isRight));
+
+    //console.log(typeof String(a));
+
+    // 3.字符串拼接
+    console.log(typeof (num + ''));
+    console.log(typeof (isRight + ''));
+    console.log(typeof (a + ''));
+
+</script>
+</body>
+</html>
