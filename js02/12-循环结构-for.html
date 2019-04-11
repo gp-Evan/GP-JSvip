@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>for循环</title>
+</head>
+<body>
+<script>
+    // for 打印1-100之间的数字
+    /*for (var i = 1; i <= 100; i++) {
+        console.log(i);
+    }*/
+    /*var i = 1;
+    while (i <= 100) {
+        console.log(i);
+        i++;
+    }*/
+
+    /*var i = 1;
+    for(;i<=100;){
+        console.log(i);
+        i++;
+    }*/
+    // for循环的三个表达式 是可以省略的，但是 条件如果省略就会出现死循环
+
+
+    //    案例
+    /*1. 求 1-100之间所有数
+    2. 1-100之间所有数的和
+    3. 1-100之间所有数的平均值
+    4. 同时求  1-100之间所有奇数、偶数的和*/
+    /*var sum = 0;
+    for (var i = 1; i <= 100; i++) {
+        sum += i;
+    }
+    console.log(sum)*/
+    /*var sum = 0;
+    var avg;
+    for (var i = 1; i <= 100; i++) {
+        sum += i;
+    }
+    avg = sum / 100;*/
+    var oddSum = 0;
+    var evenSum = 0;
+    for (var i = 1; i <= 100; i++) {
+        if (i % 2 === 0) {
+            // 偶数
+            evenSum += i;
+        } else {
+            // 奇数
+            oddSum += i;
+        }
+    }
+    console.log('偶数和： ' + evenSum, '奇数和： ' + oddSum);
+</script>
+</body>
+</html>

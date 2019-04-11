@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>break和continue</title>
+</head>
+<script>
+    //    break   破坏   破坏循环，终止循环
+    //    continue  继续     跳出本次循环，继续下一次循环
+    //    求 50-200之间 第一个能被7整除的数
+    for (var i = 50; i <= 200; i++) {
+        if (i % 7 === 0) {
+            console.log(i);
+            // 找到 第一个的时候 就跳出循环
+            break;
+        }
+    }
+
+
+    // 求1-100之间的累加值，但是要求 跳过能所有 个位 为 3的数。
+    var sum = 0;
+    /*for (var i = 0; i < 100; i++) {
+        if (i % 10 === 3) {
+            console.log(i);
+        }else{
+            sum += i;
+        }
+    }
+    console.log(sum);*/
+    for (var i = 0; i < 100; i++) {
+        if (i % 10 === 3) {
+            continue;
+        }
+        sum += i;
+    }
+    console.log(sum);
+</script>
+<body>
+</body>
+</html>
