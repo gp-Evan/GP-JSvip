@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>数组</title>
+</head>
+<body>
+<script>
+    //    为什么要学习数组
+    //    数组，是一种数据类型
+    //    Number    String
+    //    var name1  = 'zs';
+    //    var name2 = 'ls';
+    //    数组的赋值
+    //    数组的字面量赋值
+    //    var names = ['zs', 'ls', 'ww'];  // 利用数据关系 获取数据
+    //
+    //    // 如何获取数组中的数据
+    //    // 利用索引/下标
+    //    // 数组中的 第一项索引为 0
+    //    console.log(names[0]);
+    //    console.log(names[1]);
+    //
+    //    // 获取最后一项的值
+    //    console.log(names[2]);
+    //
+    //    // undefined
+    //    console.log(names[3]);
+
+    // 数组中存储的数据类型可以不一样
+    // 但是不推荐这么使用
+    //    var stu = ['zs', 'ls', 18, 19, true];
+    //
+    //    console.log(stu); // 第一次 打开页面 Array(5)
+    // 再次刷新  字面量展开形式。
+
+    // 数组的长度： 数组中元素的个数
+    var names = ['zs', 'ls', 'ww', 'zl', '123'];
+    // 还记得 String.length
+    //    console.log(names.length);
+    //    // 获取 数组中的最后一个元素
+    //    console.log(names[3]);
+    //    // 如果数组有30项，那么最后一项是   29   length-1
+    //    // 所以 如果访问 数组的最后一个元素  始终 推荐
+    //    console.log(names[names.length-1]);
+    //    // 不管添加几项到数组中，始终访问数组的最后一项
+
+
+    // 数组的长度可以动态改变
+
+    // 如何求修改数组中的元素
+    //    names[0] = 'aaa';
+    //    console.log(names);
+
+    // 长度为 5  最大索引是  4
+    //    names[5] = 'abc';
+    //    names[7] = 'ddd';
+    //    console.log(names[6]);
+    //    console.log(names);
+    // 发现abc 被追加到了数组最后。  数组的长度变成了6
+
+
+    //    获取数组中的每一项，并打印（遍历）
+    /*for(var i = 0; i< names.length;i++){
+        console.log(names[i]);
+    }
+
+
+    // 反向遍历（倒序遍历）
+    for (var i = names.length - 1; i >= 0; i--) {
+        console.log(names[i]);
+    }*/
+
+
+    // 数组 批量赋值
+    var scores = []; // 空数组
+    console.log(scores.length);
+    for(var i = 0; i<10;i++){
+        scores[i] = i;
+    }
+    console.log(scores);
+
+
+    scores.length = 0; // 清空数组
+    console.log(scores);
+
+
+
+</script>
+</body>
+</html>

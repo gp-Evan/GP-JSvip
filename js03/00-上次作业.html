@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>作业</title>
+</head>
+<body>
+<script>
+    //    判断一个人的年龄 是否满18岁 【if语句，三元表达式】
+    /*var age = 19;
+    if (age >= 18) {
+        console.log('成年了');
+    } else {
+        console.log('还未成年');
+    }
+
+    console.log(age >= 18 ? '成年' : '未成年');
+
+    //判断一个年份 是 闰年还是平年（闰年：能被4整除，但不能被100整除的年份，或者能被400整除的年份）【if】
+    var year = 2001;
+    if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+        console.log('闰年');
+    } else {
+        console.log('平年');
+    }
+
+    console.log(year % 4 === 0 && year % 100 !== 0 || year % 400 === 0 ? '闰年' : '平年');
+    //    打印100以内7的倍数【while、for】
+    for (var i = 1; i <= 100; i++) {
+        if (i % 7 === 0) {
+            console.log(i);
+        }
+    }
+
+    //    打印100以内 所有的偶数【while、for】
+    for (var i = 1; i <= 100; i++) {
+        if (i % 2 === 0) {
+            console.log(i)
+        }
+    }
+
+    //
+    //    打印100以内所有的奇数和【while、for】
+    var sum = 0;
+    for (var i = 1; i <= 100; i++) {
+        if (i % 2 !== 0) {
+            sum += i;
+        }
+    }
+    console.log(sum);
+    //
+    //    使用do...while，输入询问“我爱你，嫁给我吧？”，选择“你喜欢我吗？(y/n)”
+    //
+    //如果输入y则打印，“我们形影不离”，如果输入n，继续询问。
+    //
+    //打印1-100之间所有数的平均值
+    var avg = 0;
+    var sum = 0;
+    for (var i = 1; i <= 100; i++) {
+        sum += i;
+    }
+    avg = sum / 100;
+    console.log(avg);*/
+
+    //    在控制台 输出 一个 10*10 的 * 形状
+    var str = '';
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+            str += '* ';
+        }
+        str += '\n';
+    }
+    console.log(str);
+
+    //
+    //    10*10正方形
+    //
+    //    在控制台输出一个 三角
+    var str = '';
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < i; j++) {
+            str += '* ';
+        }
+        str += '\n';
+    }
+    console.log(str);
+
+    //    三角
+    //
+    //    在控制台 输出 99乘法表
+    for (var i = 1; i < 10; i++) {
+        for (var j = 1; j <= i; j++) {
+            str += j + 'x' + i + '=' + i * j + '\t';
+        }
+        str += '\n';
+    }
+
+    console.log(str);
+    //
+    //
+    //
+    //    本金10000元存入银行，年利率是 千分之三，每过1年，将本金和利息相加作为新的本金。计算5年后，获得的本金是多少？
+    var benjin = 10000;
+    var rate = 0.003;
+    for (var i = 1; i <= 5; i++) {
+        benjin += benjin * rate;
+    }
+    console.log(benjin)
+    //
+    //有一个人想知道，一年之内一对兔子能繁殖多少对。于是就筑了一道围墙，把一对兔子关在里边。已知一对兔子每月可以生一对小兔子，而一对小兔子出生后第三个月开始每月生一对小兔子。假如1年内没有发生死亡现象，那么1年（12个月）时间，最后剩多少对兔子。
+
+    var n1 = 1, n2 = 1;
+    var sum = 0;
+    for (var i = 3; i <= 12; i++) {
+        sum = n1 + n2;
+        n1 = n2;
+        n2 = sum;
+    }
+    console.log(sum);
+</script>
+</body>
+</html>

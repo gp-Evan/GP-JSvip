@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>函数的返回值</title>
+</head>
+<body>
+<script>
+    //    1. 求一组数中的最大值
+    //  求出 最大值之后  return回来
+    function getMax(arr) {
+        var max = arr[0];
+        for (var i = 1; i < arr.length; i++) {
+            max = max < arr[i] ? arr[i] : max;
+        }
+        return max;
+    }
+
+    var arr = [12, 1, 99, 199, 29, 19];
+    var max = getMax(arr);
+    console.log(max);
+
+    //    2. 求一组数中的最小值
+    //    3. 求阶乘
+    // 5!    5*4*3*2*1
+    function getFactorial(n){
+        var fac = 1;
+        for(var i = 1;i<=n;i++){
+            fac *= i;
+        }
+        return fac;
+    }
+    console.log(getFactorial(5));
+    //    4. 求1!+2!+3!+....+n!
+    function getFactorialSum(n){
+        var sum = 0;
+        for(var i = 1;i<=n;i++){
+            sum += getFactorial(i);
+        }
+        return sum;
+    }
+    console.log(getFactorialSum(5));
+
+
+    // 如果一个函数不需要返回值，可以不写 return
+    // 当函数中不写 return 的时候，默认返回undefined
+    // return 还可用于 结束 函数继续往下执行，函数执行过程中，只要遇到return就不会再继续往下执行了。
+    function test (a,b){
+        console.log(a+b);
+    }
+    var r = test(1,2);
+    console.log(r);
+</script>
+</body>
+</html>

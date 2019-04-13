@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>函数的参数</title>
+</head>
+<body>
+<script>
+    // 为什么要有参数
+    //  前面 getSum()这个代码 是可以重复调用的，
+    // 但是，如果这个地方要计算 1-100的和  另一个地方要调用200-300的和呢。
+    //  n-m之间的和，应该怎么办
+
+
+    // 函数内部是一个封闭的空间
+    // 可以通过参数的形式，将外部的值传递给函数内部
+    // 声明的时候，是形参
+    /* function getSum(n, m) {
+         //函数体
+         console.log(n + m);
+     }*/
+
+    // 调用
+    // 调用的时候，是实参
+    //    getSum(1, 100);
+
+    // 实参可以是 变量
+    /*var x = 1, y = 2;
+    getSum(x, y);*/
+
+
+
+    //    如果在函数内部 修改形参的值，是否会改变 外部实参的值
+
+
+    /*    function getSum(n, m) {
+            n = 100;
+            m = 1000;
+            console.log(n + m);
+        }
+
+        var x = 1, y = 2;
+        getSum(x, y);
+
+        console.log(x,y);*/
+    // 在调用的时候，是把实参的值复制了一份给形参的，所以互不影响
+
+    //    1. 求1-n之间所有数的和
+    /*function getSum(n){
+        var sum = 0;
+        for(var i = 1;i<=n;i++){
+            sum += i;
+        }
+        console.log(sum);
+    }
+    getSum(5);*/
+    //    2. 求n-m之间所有数额和
+    /*function getSum(n,m){
+        var sum = 0;
+        for(var i = n;i<=m;i++){
+            sum += i;
+        }
+        console.log(sum);
+    }
+    getSum(1,10);*/
+    //    3. 圆的面积   PI * r * r
+    /*function getArea(r){
+        var pi = 3.1415926;
+        console.log(pi * r * r);
+    }
+    getArea(5);*/
+
+    //    4. 求2个数中的最大值
+    /*function getMax(x,y){
+        if(x>y){
+            console.log(x);
+        }else{
+            console.log(y);
+        }
+    }*/
+    /*function getMax(x, y) {
+        console.log(x > y ? x : y);
+    }
+
+    var a = 10, b = 5;
+    getMax(a, b);*/
+
+    //    5. 求3个数中的最大值
+    /*function getMax(x, y, z) {
+        var max = x > y ? x : y;
+        max = max > z ? max : z;
+        console.log(max);
+
+    }*/
+    /*function getMax(x, y, z) {
+        console.log((x > y ? x : y) > z ? (x > y ? x : y) : z);
+    }
+    getMax(1, 5, 3);*/
+
+
+    //  求一组数中的最大值
+    /*function getMax(arr) {
+        var max = arr[0];
+        for (var i = 1; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i]
+            }
+        }
+        console.log(max);
+    }
+
+    var arr = [1,2,3,4,5,6];
+    getMax(arr);*/
+
+    //    6. 判断一个数是否是素数
+    //  素数  质数,只能被1和自身整除的数
+    function judgePrimeNumber(x) {
+        var isPrime = true;
+        // 1  和 自身不包括
+        for (var i = 2; i < x; i++) {
+            if (x % i === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        console.log(isPrime ? '是质数' : '不是质数');
+    }
+
+    judgePrimeNumber(15);
+</script>
+</body>
+</html>

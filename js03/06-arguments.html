@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>arguments</title>
+</head>
+<body>
+<script>
+    var a = 1;
+    var b = 2;
+    var c = 3;
+    console.log(a, b, c); // 不指定参数的个数，是如何实现的。
+
+
+    // 当 需要几个参数，就 给几个参数
+    function test() {
+        // 函数内部
+        console.log(arguments);
+        // 我们可以通过arguments获取函数调用时候传入的实参
+        // arguments 非常像数组，但不是真正的数组 ---- 类数组对象
+
+        console.log(1);
+    }
+
+    test(1, 2, 3);
+
+
+    //    1. 求任意个数的最大值
+    // 不需要定义数组
+    function getMax() {
+        console.log(arguments);
+        var max = arguments[0];
+        for (var i = 1; i < arguments.length; i++) {
+            max = max > arguments[i] ? max : arguments[i];
+        }
+        return max;
+    }
+
+    console.log(getMax(1, 2, 4,200));
+    //    2. 求任意个数的和
+</script>
+</body>
+</html>
