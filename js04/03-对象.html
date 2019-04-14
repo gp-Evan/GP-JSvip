@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>对象</title>
+</head>
+<body>
+<script>
+    // 为什么要有对象
+    // 声明一个打印人的信息的对象
+    //    function printPerson(name, age, salary.....) {
+    //        // 姓名，年龄，工资 等等
+    //    }
+    /*function printPerson(person) {
+        //  把person 一个人的信息 直接传进来，就不需要那么多参数了。
+        console.log(person.信息);
+        console.log(person.name);
+    }*/
+
+    //    所以  对象可以 集合 一个事物 多个属性
+
+
+    // 什么是对象
+
+    // 现实世界中的对象   --- 万物皆对象
+    // 一切的实物都可以看成对象，它是一件具体的事务 。
+
+    //  手机  都不是 对象，而是 一类事务 ，对象应该是一个具体的事务 ，比如 张三这个同学
+    //  汽车
+
+
+    //    对象：
+    //    特征：
+    //      名词 ，描述这个对象的某个属性
+    //    行为：
+    //      动词，描述这个对象的某种行为
+
+
+    // 程序中的对象是对现实世界中某一个具体事物的抽象。
+    var student = {
+        name: 'zs',
+        age: 18,
+        sex: '男',
+        sayHi: function () {
+            console.log('hello');
+        }
+    };
+
+
+    //    对象具有属性和方法：
+    //    属性：  特征
+    //    方法：  行为
+</script>
+</body>
+</html>

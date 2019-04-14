@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>复杂类型存储</title>
+</head>
+<body>
+<script>
+    // 复杂类型如何在内存中存储
+    //    object
+    // 所有的对象都是基于 object
+    var p1 = new Object();
+    p1.name = 'zs';
+    p1.age = 18;
+
+    p1.sayHi = function () {
+        console.log(this.name + '哈喽');
+    };
+
+    var p2 = p1;
+
+    p1.name = 'ls';
+    console.log(p2.name);
+</script>
+</body>
+</html>

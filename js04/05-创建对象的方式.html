@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>创建对象的方式</title>
+</head>
+<body>
+<script>
+    // 1. 字面量创建对象
+    /*var hero = {
+        name: '黄忠',
+        weapon: '弓箭',
+        equipment: ['头盔', '盔甲', '靴子'],
+        blood: 100,
+        attack: function () {
+            console.log(this.name + '射箭');
+        },
+        run: function () {
+            console.log(this.name + '逃跑');
+        }
+    };
+
+    console.log(hero.name, hero.weapon);
+    hero.attack();
+    hero.run();*/
+
+    // 2. new Object  对象的构造函数
+    var hero1 = {}; // 空对象字面量
+    var hero = new Object(); // 创建一个空对象
+
+    // 调用构造函数   系统提供的构造函数
+
+    // 打印一个不存在的属性
+    /*console.log(hero.name); // undefined
+
+    // 属性  // 动态特性
+    hero.name = '赵云';
+    hero.weapon = '长枪';
+    hero.equipment = ['头盔', '盔甲', '靴子'];
+    hero.blood = 100;
+    // 方法
+    hero.attck = function () {
+        console.log(this.name + '横扫千军');
+    };
+    hero.run = function () {
+        console.log(this.name + '逃之夭夭');
+    }*/
+
+
+    //    如果要创建很多个对象
+
+    /*var  hero1 = {
+        xxx:
+    };
+    var hero2 = {
+        xxx:
+    };*/
+
+
+    //    第三种创建对象的方式：
+    //    批量创建
+    // 工厂函数
+    /*function createHero(name, weapon, equipment, blood) {
+        var hero = new Object();
+        hero.name = name;
+        hero.weapon = weapon;
+        hero.euipment = equipment;
+        hero.blood = blood;
+        hero.attack = function () {
+            console.log(this.name + '攻击');
+        };
+        hero.run = function () {
+            console.log(this.name + '逃跑');
+        };
+        return hero;
+    }
+
+
+    var hero1 = createHero('黄忠', '弓箭', ['头盔'], 100);
+    var hero2 = createHero('赵云', '长枪', ['头盔'], 100);
+    var hero3 = createHero('刘备', '剑', ['头盔'], 100);
+    var hero4 = createHero('关羽', '大刀', ['头盔'], 100);*/
+
+
+</script>
+</body>
+</html>

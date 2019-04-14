@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>复杂类型作为函数参数</title>
+</head>
+<body>
+<script>
+    /*var obj = new Object();
+    obj.name = 'zs';
+    obj.age = 18;
+    obj.sayHi = function () {
+        console.log(this.name + '哈喽');
+    };
+
+    function fn(person){
+        person.name = 'ls';
+    }
+    fn(obj);
+    console.log(obj);*/
+    var obj = new Object();
+    obj.name = 'zs';
+    obj.age = 18;
+    obj.sayHi = function () {
+        console.log(this.name + '哈喽');
+    };
+
+    function fn(person) {
+        person.name = 'ls';
+        person = new Object();
+        person.name = 'ww';
+        person.age = 20;
+        console.log(person.name);
+    }
+
+    fn(obj);
+    console.log(obj);
+</script>
+</body>
+</html>

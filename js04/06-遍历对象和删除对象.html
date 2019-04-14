@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>遍历对象和删除对象</title>
+</head>
+<body>
+<script>
+    /*var obj = {
+        name: '张三',
+        age: 18,
+        sex: '男',
+        sayHi: function () {
+            console.log(this.name + 'hello');
+        }
+    };
+
+    // 因为数组有下标，而对象是没有下标
+
+
+    //    使用 for...in 遍历 对象的成员（属性和方法）
+    for (var key in obj) {
+        console.log(key);
+        console.log(obj.key);
+        console.log(obj[key]);
+    }
+
+
+    //    回顾访问对象属性的方式
+    //    obj.name
+    //    obj['name']
+
+
+    var o = {};
+    for (var i = 0; i < 10; i++) {
+//        o.name
+        o['a' + i] = i * 2;
+    }
+
+    console.log(o);
+
+    for (var key in o) {
+        console.log(key + '---' + o[key]);
+    }*/
+
+
+    var o = {
+        name: 'abc',
+        say: function () {
+            console.log('hi');
+        }
+    }
+
+    console.log(o.name);
+    console.log(o.name1);
+
+    delete o.name;
+    console.log(o.name);
+
+//    delete o.say;
+    console.log(o.say);
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>简单类型作为函数参数</title>
+</head>
+<body>
+<script>
+    function fn(a, b) {
+        a = a + 1;
+        b = b + 1;
+        console.log(a, b);
+    }
+
+    // 函数的参数，其实就是函数内部的局部变量
+    var x = 10;
+    var y = 20;
+    fn(x, y);
+    console.log(x, y);
+</script>
+</body>
+</html>

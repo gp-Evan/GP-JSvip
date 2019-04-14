@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>对象字面量</title>
+</head>
+<body>
+<script>
+    // 如何创建一个对象
+    // 如何使用对象的成员
+    //  对象 由属性和方法 组成    ，  属性和方法 都叫对象的成员
+
+
+    //    函数和对象的区别
+    // 他俩都具有封装行：
+    //  函数是封装一段特定功能的代码
+    // 对象可以封装一些属性  以及 一些行为方法
+
+
+    //    创建对象   dog
+    //    属性： name,type,color,etc.
+    //    方法： bark
+    var dog = {
+        name: '小黄',
+        type: '中华田园犬',
+        age: 2,
+        color: 'yellow',
+        bark: function () {
+            // 在方法中如何使用对象的属性
+            // this 指的是当前对象
+            console.log(this.name + '汪汪');
+        },
+        eat: function () {
+            console.log('啃骨头');
+        }
+    };
+
+    //    如何访问对象的属性和方法
+    // 对象.属性名
+    console.log(dog.name, dog.type);
+    // 对象.方法()   调用方法
+    dog.bark();
+
+
+    // 属性的另一种方式来访问
+    // 类似于数组的访问方式  arr[0]
+
+    console.log(dog['name']);
+
+
+    //    函数和方法的区别
+    function fn() {
+
+    }
+
+    // 函数是封装一段 特定功能的代码，  独立存在的 叫函数
+    //  方法 ，是只对象的某个行为，  它是属于对象中的函数
+
+
+    //    创建一个英雄的对象
+    //  属性： 名字，装备,武器，血条
+    //  方法：攻击 逃跑
+    var hero = {};
+
+</script>
+</body>
+</html>
