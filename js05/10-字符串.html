@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>字符串</title>
+</head>
+<body>
+<script>
+    // 字符串的不可变
+    var s = 'abc';
+    s = 'xxxxyyyxxx';
+    // 与number类型不一样
+    // number类型是在内存空间中直接修改值
+    // string类型，是重新声明一个块空间  ，让变量重新指向
+    // 所以  当 拼接大量字符串的时候，就会有性能问题
+
+    var s = '';
+    for (var i = 0; i < 10; i++) {
+        s+=i;
+    }
+    console.log(s);
+    // 所以避免大量拼接字符串
+</script>
+</body>
+</html>

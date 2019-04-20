@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>字符串方法</title>
+</head>
+<body>
+<script>
+    // 1 字符方法
+    // charAt()    	//获取指定位置处字符
+    // charCodeAt()  	//获取指定位置处字符的ASCII码
+    // str[0]   		//HTML5，IE8+支持 和charAt()等效
+    /*var s = 'abcdef';
+//    console.log(s.charAt(0));
+    for (var i = 0; i < s.length; i++) {
+        console.log(s.charAt(i));
+        console.log(s[i]);
+        s[i]='0';
+    }
+    console.log(s.charCodeAt(0));
+    s[0]='0'; // 不能通过这种方法赋值*/
+
+
+    // 2 字符串操作方法
+    // concat()   		//拼接字符串，等效于+，+更常用
+    // slice()    		//从start位置开始，截取到end位置，end取不到
+    // substring() 	//从start位置开始，截取到end位置，end取不到
+    // substr()   		//从start位置开始，截取length个字符
+    // 3 位置方法
+    // indexOf()   	//返回指定内容在元字符串中的位置
+    // lastIndexOf() 	//从后往前找，只找第一个匹配的
+    // 4 去除空白
+    // trim()  		//只能去除字符串前后的空白
+    // 5 大小写转换方法
+    // to(Locale)UpperCase() 	//转换大写
+    // to(Locale)LowerCase() 	//转换小写
+    // 6 其它
+    // search()
+    // replace()
+    // split()
+    // fromCharCode()
+    // String.fromCharCode(101, 102, 103);	 //把ASCII码转换成字符串
+
+
+    /**
+     * 记住 ，字符串的所有方法，都不会修改原始字符串，所以，都是返回一个新的字符串
+     */
+    // 截取字符串
+    /*var s = '我爱中华人民共和国';
+
+    console.log(s.substr(2,2));*/
+
+    // 查找字符串位置
+    /*var s = 'abcoefoxyozzopp';
+    console.log(s.indexOf('o'));
+    console.log(s.lastIndexOf('o'));
+    var index = -1;
+    do {
+        console.log(index = s.indexOf('o', index + 1));
+    } while (index != -1);*/
+
+    // 把字符串中所有的o 替换成!
+    // var s = 'abcoefoxyozzopp';
+    /*// replace 只会替换第一个
+    // console.log(s.replace('o','!'));
+    var index = -1;
+    do {
+        index = s.indexOf('o');
+        s = s.replace('o', '!');
+    } while (index != -1);*/
+
+
+    // console.log(s.replace(/o/gi,'!'));
+
+    // 去除字符串中所有空白字符
+    var s = '    abc     xyz      a 123          ';
+    console.log(s.length);
+    console.log(s.trim());// trim 只能去除字符串前后的空格
+
+    // 思路1：
+    // console.log(s.replace(/\s/gi,''));
+
+    // 思路2：
+    /*var str = '1,2,3,4';
+    var strArr = str.split(',');
+    console.log(strArr)
+    console.log(strArr.join('!'));*/
+    var sArr = s.split(/\s/);
+    console.log(sArr);
+    console.log(sArr.join(''));
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>数组</title>
+</head>
+<body>
+<script>
+    // 如何创建数组
+    // 1. 数组字面量方式
+    // var arr = [];
+    // var numbers = [1, 2, 3, 4];
+
+    // 2. 利用数组的构造函数创建数组
+    /*var array = new Array();// 创建一个空数组
+    // 字面量 内部 就是 调用构造函数
+    var array2 = new Array(2, 4, 5);
+
+
+    // 之前学的属性
+    // 其实 length属性是 Array构造函数的一个属性成员
+    console.log(array2.length);*/
+
+
+    // 如何判断一个变量是否属于数组
+    /*console.log(typeof array); // Object
+    console.log(array instanceof Array);
+
+    function fn(arr) {
+        if (!(arr instanceof Array)) {
+            console.error('数据类型错误');
+            return false;
+        }
+    }
+
+    fn(1);*/
+
+    // 另一种方式 Array.isArray()
+    // 这个方法是静态方法 ，由构造函数直接调用
+    // 性能方面 优于  instanceof，但是可能会存在兼容性
+    /*console.log(Array.isArray(array));
+
+    console.log(array2.valueOf()); // 返回本身
+    console.log(array2.toString()); // 返回字符串*/
+    // 因为所有的对象 都继承于 Object ，而Object 本身自带valueOf toString方法
+    // 所以，所有对象都有着两个方法
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>instanceof</title>
+</head>
+<body>
+<script>
+    // typeof返回值是一个字符串，该字符串说明表达式结果的数据类型。
+    var a = 1,
+        b = 'abc',
+        c = true,
+        d,
+        f = null,
+        e = {};
+    function g() {
+
+    };
+
+    console.log(typeof a); // number
+    console.log(typeof b); // string
+    console.log(typeof c); // boolean
+    console.log(typeof d); // undefined
+    console.log(typeof e); // object  注意
+    console.log(typeof f); // object
+    console.log(typeof g); // function
+
+    // instanceof 判断一个变量是那个构造函数的实例
+
+    function A (){
+
+    }
+    var aa = new A();
+    console.log(g instanceof Object);
+    console.log(g instanceof Function);
+    console.log(aa instanceof A);
+    console.log(aa instanceof Object);
+
+
+
+</script>
+</body>
+</html>

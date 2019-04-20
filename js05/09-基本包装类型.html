@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>基本包装类型</title>
+</head>
+<body>
+<script>
+    // 基本包装类型
+    // s1 是简单类型，或者说是基本类型，本身是没有属性和方法的
+    // 只有对象才有属性和方法
+    var s1 = 'abc';
+    console.log(s1.length);
+    // 基本包装类型：   把基本类型包装成  复杂类型（object）
+    // String / Number / Boolean  构造函数
+    // PrimitiveValue  原始值
+    // 基本包装类型的 原始值   就是  基本类型的值
+
+    var s2 = new String('123123abc');
+    console.log(s2);
+    console.log(s1);
+
+    // 在基本类型 调用属性和方法的时候，系统 做了以下事情
+    /**
+     * 1.var _s1 =  new String('原始值');
+     * 2. _s1.length （使用）
+     * 3. 使用完之后  _s1 = null ,置空
+     * 4. 释放 堆空间内存
+     */
+
+
+    // 一般情况下，我们不会使用基本包装类型，基本包装类型是系统内部使用的
+    var n1 = new Number('16'); // 基本包装类型创建对象
+    var n2 = Number('16');  // 强制类型转换
+
+    var b1 = new Boolean(false);
+    var b2 = b1 && true; // ?
+    console.log(b2);  // 转换成 false的五种情况。
+</script>
+</body>
+</html>

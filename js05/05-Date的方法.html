@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Date方法</title>
+</head>
+<body>
+<script>
+    // 一般时间格式
+    // 2019-01-01 12:04:20
+
+    var d = new Date();
+
+    // 两者都 是同样的字符串，其实打印的时候，内部调用了 toString的方法
+    console.log(d);
+    console.log(d.toString());
+
+    // 实质把 toString 分成了两部分
+    // 美式 格式
+    console.log(d.toDateString());
+    console.log(d.toTimeString());
+
+    // 根据系统内部地域 ，打印相应的格式
+    // 但是因为 在不同浏览器，会返回不同的值，
+    // 所以并不实用
+    console.log(d.toLocaleString());
+    console.log(d.toLocaleDateString());
+    console.log(d.toLocaleTimeString());
+
+
+    // 获取时间日期中的指定部分
+    console.log(d.getFullYear());
+    // 注意 月份要+1
+    console.log(d.getMonth() + 1);
+    console.log(d.getDate());
+    console.log(d.getHours());
+    console.log(d.getMinutes());
+    console.log(d.getSeconds());
+    console.log(d.getDay());
+
+    // 格式化时间日期
+    // 写一个函数，格式化日期对象，返回yyyy-MM-dd HH:mm:ss的形式
+    function fomatDate(date) {
+
+        // 先判断传入的对象是否是时间日期对象
+        // instance of
+        if (!(date instanceof Date)) {
+            console.error('传入的数据不是时间日期类型');
+            return false;
+        }
+        var year = date.getFullYear(),
+            month = date.getMonth() + 1,
+            day = date.getDate(),
+            hours = date.getHours(),
+            minutes = date.getMinutes(),
+            seconds = date.getSeconds();
+
+        /*if (month < 10) {
+            month = '0' + month;
+        }*/
+        month = month < 10 ? '0' + month : month;
+        day = day < 10 ? '0' + day : day;
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        return year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+    }
+
+    var dd = new Date();
+
+    console.log(fomatDate(dd));
+
+
+    // 计算时间差，返回相差的天/时/分/秒
+    // 时间差 两个日期时间戳相减
+    /*var d1 = new Date();
+    var d2 = new Date(2018, 9, 10);
+    // 时间戳相减
+    console.log(d1.getTime() - d2.getTime());*/
+
+    // 函数如何返回多个值
+    /*function fn() {
+        // return 1;
+        return {
+            day: 1,
+            hours: 2,
+            minutes: 4
+        };
+    }*/
+
+    // 相差市场的转换
+    // 16558956667
+    // 相差的总秒数   16558956667 / 1000
+    // 天数    16558956667 /  1000 / 60 /60 / 24
+    // 小时    16558956667 /  1000 / 60 / 60 % 24  最后一个余数
+    // 分钟    16558956667 /  1000 / 60 % 60
+    // 秒数    16558956667 /  1000 % 60
+
+    function getInterval(start, end) {
+        if (!(start instanceof Date) || !(end instanceof Date)) {
+            console.error('传入的参数类型错误');
+            return false;
+        }
+        var interval = (end - start) / 1000;
+        // 求相差的天数，小时，分钟，秒
+        var day, hour, minute, second;
+        day = Math.floor(interval / 60 / 60 / 24);
+        hour = Math.floor(interval / 60 / 60 % 24);
+        minute = Math.floor(interval / 60 % 60);
+        second = Math.floor(interval % 60);
+        return {
+            day: day,
+            hour: hour,
+            minute: minute,
+            second: second
+        };
+    }
+
+    var d1 = new Date(2018, 10, 10);
+    var d2 = new Date();
+    console.log(getInterval(d1, d2));
+</script>
+</body>
+</html>

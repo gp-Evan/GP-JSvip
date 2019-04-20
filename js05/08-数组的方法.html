@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>数组的方法</title>
+</head>
+<body>
+<script>
+    // 数组的方法
+    // 数组的常用方法有很多，可以通过 MDN ，也可以查看 __proto__属性
+
+
+    // 1 栈操作(先进后出)
+    //    push()
+    //    pop() 		//取出数组中的最后一项，修改length属性
+    /*var arr = [1, 2, 3];
+    console.log(arr.push(4));
+    console.log(arr.push(5,6,7));
+    // 参数 可多个
+    // 返回值：  返回新数组的长度
+
+    console.log(arr.pop());  // 返回删除的元素
+    console.log(arr);*/
+
+    // 2 队列操作(先进先出)
+    //    push()
+    //    shift()		//取出数组中的第一个元素，修改length属性
+    /*var arr = [1,2,3];
+    console.log(arr.push(5));
+    console.log(arr.shift()); // 返回删除元素的值
+
+    //    unshift() 	//在数组最前面插入项，返回数组的长度
+    console.log(arr.unshift(0,9)); // 返回新数组长度*/
+
+
+    // 如何学习一个方法：
+    // 1. 方法的作用
+    // 2. 方法参数的意义及类型
+    // 3. 方法返回值的意义和类型
+    // 4. demo测试
+
+
+    // 3 排序方法
+    // reverse()	//翻转数组
+    // sort(); 	//即使是数组sort也是根据字符，从小到大排序
+    /*var arr = ['e', 'a', 'f', 'b'];
+    // console.log(arr.reverse());  // 返回新数组
+    console.log(arr.sort()); // 对数组本身进行排序 返回新数组
+
+    // sort 默认 是 按照字符编码的顺序排列
+    var arr2 = [20, 10, 108, 3]; // 3，10，20，108
+    // console.log(arr2.sort());
+    /!*function compare(a, b) {
+        if (a > b) {
+            return 1
+        } else if (a < b) {
+            return -1;
+        } else {
+            return 0;
+        }
+    }*!/
+    function compare(a, b) {
+        return a - b;
+    }
+
+    console.log(arr2.sort(compare));
+
+    var arr3 = ['ad', 'abc', 'a', 'bdcdef'];
+    /!*arr3.sort(function (a, b) {
+        return b.length - a.length;
+    });*!/
+
+    // sort函数内部实现
+    function sortArr(arr, compareFn) {
+        for (var i = 0; i < arr.length - 1; i++) {
+            var isSort = true;
+            for (var j = 0; j < arr.length - 1 - i; j++) {
+                if (compareFn(arr[j], arr[j + 1]) > 0) {
+                    var tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                    isSort = false;
+                }
+            }
+            if (isSort) {
+                break;
+            }
+        }
+        return arr;
+    }
+
+    sortArr(arr3, function (a, b) {
+       return b.length - a.length;
+    });*/
+
+    // 清空数组
+    // var arr = [1,2,3,4,5];
+    // arr = [];
+    // arr.length = 0;
+    // arr.splice(0,arr.length);// 从 0的位置删除  长度个 元素
+
+
+    // 将一个字符串数组输出为|分割的形式，比如“刘备|张飞|关羽”。使用两种方式实现
+    /*var arr = ['刘备', '张飞', '关羽'];
+    // console.log(arr.toString());
+    // console.log(arr.join('|'));
+    function myJoin(arr, seperator) {
+        seperator = seperator || '|';
+        arr = arr || [];
+        if (arr.length === 0) {
+            return '';
+        }
+        var str = arr[0];
+        for (var i = 1; i < arr.length; i++) {
+            str += seperator + arr[i];
+        }
+        return str;
+    }
+
+    console.log(myJoin(arr,"|"));*/
+
+
+    /*var arr = ['c', 'a', 'z', 'a', 'x', 'a'];
+    var index = -1;
+    do {
+        console.log(index = arr.indexOf('a', index + 1));
+    } while (index != -1);*/
+
+    // 去重
+    /*var arr = [
+        {
+            fileUri:
+                "http://p8p5pxvzn.bkt.clouddn.com/FlHKk5G3YxVNob5F0xPqDIxBvw_v?e=1555753744&token=Zn2L8H75GslVegPfarWlvqU8CUKsOGA2qT5uqbxS:QQCPJ0H30nHDZ-icHZqwHAOhN6A=",
+            id: "1555750145171",
+            key: "FlHKk5G3YxVNob5F0xPqDIxBvw_v",
+            kind: "PERSONAL_RESIDENCE_BOOK",
+            name: "2.png",
+            size: 122955,
+            type: "png"
+        },
+        {
+            fileUri:
+                "http://p8p5pxvzn.bkt.clouddn.com/FsBtxsZ_1ciX32J3xG-hnNH1JdAh?e=1555753742&token=Zn2L8H75GslVegPfarWlvqU8CUKsOGA2qT5uqbxS:wpSIAhugrhr_mQzsYoABfJK3dfs=",
+            id: "1555750143102",
+            key: "FsBtxsZ_1ciX32J3xG-hnNH1JdAh",
+            kind: "COM_BUSINESS_LICENSE",
+            name: "1.jpg",
+            size: 213116,
+            type: "jpg"
+        },
+        {
+            fileUri:
+                "http://p8p5pxvzn.bkt.clouddn.com/FiYyR5Bo8SWh_2QEUK57byXK6XlI?e=1555753747&token=Zn2L8H75GslVegPfarWlvqU8CUKsOGA2qT5uqbxS:tN0fS2b4I6SeZOLcy6djPMl5db4=",
+            id: "1555750148058",
+            key: "FiYyR5Bo8SWh_2QEUK57byXK6XlI",
+            kind: "BANK_CREDIT_REPORT",
+            name: "3.jpg",
+            size: 133169,
+            type: "jpg"
+        },
+        {
+            fileUri:
+                "http://p8p5pxvzn.bkt.clouddn.com/FlHKk5G3YxVNob5F0xPqDIxBvw_v?e=1555753744&token=Zn2L8H75GslVegPfarWlvqU8CUKsOGA2qT5uqbxS:QQCPJ0H30nHDZ-icHZqwHAOhN6A=",
+            id: "1555750145171",
+            key: "FlHKk5G3YxVNob5F0xPqDIxBvw_v",
+            kind: "PERSONAL_RESIDENCE_BOOK",
+            name: "2.png",
+            size: 122955,
+            type: "png"
+        },
+        {
+            fileUri:
+                "http://p8p5pxvzn.bkt.clouddn.com/FsBtxsZ_1ciX32J3xG-hnNH1JdAh?e=1555753742&token=Zn2L8H75GslVegPfarWlvqU8CUKsOGA2qT5uqbxS:wpSIAhugrhr_mQzsYoABfJK3dfs=",
+            id: "1555750143102",
+            key: "FsBtxsZ_1ciX32J3xG-hnNH1JdAh",
+            kind: "COM_BUSINESS_LICENSE",
+            name: "1.jpg",
+            size: 213116,
+            type: "jpg"
+        },
+        {
+            fileUri:
+                "http://p8p5pxvzn.bkt.clouddn.com/FiYyR5Bo8SWh_2QEUK57byXK6XlI?e=1555753747&token=Zn2L8H75GslVegPfarWlvqU8CUKsOGA2qT5uqbxS:tN0fS2b4I6SeZOLcy6djPMl5db4=",
+            id: "1555750148058",
+            key: "FiYyR5Bo8SWh_2QEUK57byXK6XlI",
+            kind: "BANK_CREDIT_REPORT",
+            name: "3.jpg",
+            size: 133169,
+            type: "jpg"
+        }
+    ];
+
+    function unique(arr) {
+        if (!Array.isArray(arr)) {
+            console.err('type error!');
+            return
+        }
+        var o = {};
+        for (var i = 0; i < arr.length; i++) {
+            var item = arr[i];
+            if (o[item.id]) {
+                o[item.id].count++;
+            } else {
+                o[item.id] = {
+                    count: 1,
+                    obj: arr[i]
+                }
+            }
+        }
+    }
+
+    console.log(unique(arr));*/
+</script>
+</body>
+</html>

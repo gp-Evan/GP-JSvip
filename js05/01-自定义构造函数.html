@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>自定义构造函数</title>
+</head>
+<body>
+<script>
+    // 复习工厂函数
+    // 创建学员对象的工厂函数
+    function createStu(name, age, sex) {
+        var stu = new Object();
+        stu.name = name;
+        stu.age = age;
+        stu.sex = sex;
+
+        stu.sayHi = function () {
+            console.log('hello');
+        };
+
+        return stu;
+    }
+
+    var stu1 = createStu('张三', 18, '男');
+    var stu2 = createStu('李四', 20, '女'); // 继续创建另一个学员对象
+    /*// 工厂函数 就是封装一段代码，让我们将来可以重用，
+    // 只不过这段代码的功能就是用于创建对象的代码
+    */
+
+    // 比工厂函数更优雅、更简洁的方式
+    // 自定义构造函数
+    // Object 是系统定义的一个最基本的构造函数
+    // new Object();
+    // 我们也可以创建一个自己的构造函数
+    // new Student();  通过 new 来调用构造函数
+
+    // 构造函数 为了区分普通函数，不再采用驼峰命名法，而采用 帕斯卡命名法
+    // 首字母大写，其它单词首字母也大些
+    function Student(name, age, sex) {
+        // 在函数内部，利用 this 动态给对象添加 属性和方法
+        // this 就指向 被创建的这个对象
+        this.name = name;
+        this.age = age;
+        this.sext = sex;
+
+        this.sayHi = function () {
+            console.log(this.name + '吃了吗');
+        };
+        // 构造函数与工厂函数有什么区别？
+        // 1.工厂函数 需要通过 创建 Object 对象，然后return将其返回
+        // 构造函数，直接是一个构造器，无需再返回
+        // 2.构造函数与普通函数区分开了，语义上的描述更恰当
+    }
+
+    var stu3 = new Student('王五', 33, '男');
+    var stu4 = new Student('赵六', 40, '女');
+
+    // 对比之后，自定义构造函数比工厂函数更简洁、更优雅，
+    // 所以，将来我们如果要创建多个同类对象，
+    // 首先应该创建一个 自定义构造函数
+
+    // 总结 创建对象的四种方法
+    /**
+     * 1. 字面量创建对象
+     * 2. new Object 创建单个对象，然后依次添加属性和方法
+     * 3. 通过工厂函数  封装，创建对象的方法
+     * 4. 自定义构造函数
+     */
+
+
+
+    /**
+     *  new  关键字
+     *  通过 构造函数来 创建对象的时候 使用 new关键字
+     *
+     *  new的执行过程：
+     *  首先 后边必须跟构造函数
+     *
+     *  1. 在内存中创建了一个空的对象 （new Object）
+     *  2. 让构造函数中的 this指向 刚刚创建的对象
+     *  3. 执行构造函数（在构造函数中设置属性和方法[也可以做其它事情]）
+     *  4. 将 构造函数内部创建的对象 返回
+     *
+     */
+
+</script>
+</body>
+</html>

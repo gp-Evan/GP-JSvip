@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Date对象</title>
+</head>
+<body>
+<script>
+    // Date 是一个构造函数，首先要通过 new Date来创建日期实例（对象），
+    // 调用的是实例的成员
+    // Date 是系统定义的构造函数，带有 很多属性和方法  区别于Object
+    // 模型：
+    /*function MyDate(){
+
+    }*/
+
+    //var d = new Date();
+    //console.log(d);
+
+
+    // Thu Apr 18 2019 17:56:48 GMT+0800 (中国标准时间)
+    // GMT+0800 (中国标准时间)
+    // GMT 格林威治时间  ---  世界标准时间  0时区
+    // GMT+0800  东八区时间
+
+    // JavaScript中存储时间的内容
+    // 距离 1970年1月1日0时0分0秒 相差的毫秒    计算机元年
+    //console.log(d.valueOf());
+
+
+    /**
+     * 日期构造函数的四种用法
+     *
+     * 1. 空构造函数
+     *      获取当前日期时间点
+     * 2. 构造函数中传入毫秒值
+     *      1555582209060
+     *      返回 毫秒值的日期
+     * 3. 构造函数传入 日期形式的字符串
+     *      1970-2-2
+     *
+     * 4. 构造函数传入多个参数
+     *
+     *  new Date();
+        new Date(value);
+        new Date(dateString);
+        new Date(year, month[, day[, hour[, minutes[, seconds[, milliseconds]]]]]);
+     *
+     */
+    var d1 =  new Date();
+    console.log(d1.valueOf());
+
+    var d2 = new Date(1555582209060);
+    console.log(d2);
+
+    var d3 = new Date('1970-2-2');
+//    var d3 = new Date('1970-2-2 8:8:8');
+//    var d3 = new Date('1980/2/2');
+    console.log(d3);
+
+    var d4 = new Date(2019,12,12,12,12,12); // year  month 必须的
+    console.log(d4);
+
+
+
+    // 获取日期时间的毫秒格式
+    // d.valueOf()  返回对象的原始值  一般在JavaScript内部调用，
+    // d.getTime()   作用一样， 一般写代码获取毫秒用这个方法
+
+    // 获取当前时间的毫秒值
+    // 通过 构造方法直接调用的方法，称为  静态方法
+    // 不需要创建实例
+    var num =  Date.now();  // HTML5的API,可能会有兼容问题
+    var num2 = + new Date(); // 数字类型隐式转换 // 隐式转换的时候就调用了 valueOf
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Math对象</title>
+</head>
+<body>
+<script>
+    /**
+     * Math对象，不是构造函数，它是 数学常数（属性）和函数（方法），都是以静态成员的方式提供跟数学
+     * 相关的运算来找Math中的成员
+     *
+     */
+    /*Math.PI						// 圆周率
+    Math.random()				// 生成随机数
+    Math.floor()/Math.ceil()	 // 向下取整/向上取整
+    Math.round()				// 取整，四舍五入
+    Math.abs()					// 绝对值
+    Math.max()/Math.min()		 // 求最大和最小值
+
+    Math.sin()/Math.cos()		 // 正弦/余弦
+    Math.power()/Math.sqrt()	 // 求指数次幂/求平方根*/
+
+    //    1. 求10-20之间的随机数  [10, 20] 整数
+    //    Math.random()   [0, 1)  左闭右开
+    //      Math.random()*5   [0,5)
+    //       Math.random()*(5-1)+1    [1,5)
+    //    math.random()*(5-1+1)+1     [1,6)  ===>  [1, 5]
+    // 取整  Math.floor
+    function random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    console.log(random(10, 20));
+
+    //    2. 随机生成颜色RGB
+    //  随机颜色  rgb(0-255,0-255,0-255
+    function randomColor(min, max) {
+        var color1 = random(min, max);
+        var color2 = random(min, max);
+        var color3 = random(min, max);
+        return 'rgb(' + color1 + ',' + color2 + ',' + color3 + ')';
+    }
+
+    //    console.log(document.documentElement.style.backgroundColor=randomColor(0, 255));
+
+    //    3. 模拟实现max()/min()
+    /*function max() {
+        if (arguments.length > 0) {
+            var max = arguments[0];
+            for (var i = 0; i < arguments.length; i++) {
+                var tmp = parseFloat(arguments[i]);
+                if (!tmp) {
+                    max = tmp;
+                } else {
+                    max = max < tmp ? tmp : max;
+                }
+            }
+        } else {
+            max = -Infinity;
+        }
+        return max;
+    }
+
+    function min() {
+        if (arguments.length > 0) {
+            var min = arguments[0];
+            for (var i = 0; i < arguments.length; i++) {
+                var tmp = parseFloat(arguments[i]);
+                if (!tmp) {
+                    min = tmp;
+                } else {
+                    min = min > tmp ? tmp : min;
+                }
+            }
+        } else {
+            min = Infinity;
+        }
+        return min;
+    }
+
+    console.log(max(1, 2, 3, 4));
+    console.log(min(1, 2, 3, 4, 5));*/
+
+    // 静态对象
+    // 不是构造函数
+    // 提供的是静态成员
+    var MyMath = {
+        PI: 3.1415926,
+        max: function () {
+            if (arguments.length > 0) {
+                var max = arguments[0];
+                for (var i = 0; i < arguments.length; i++) {
+                    var tmp = parseFloat(arguments[i]);
+                    if (!tmp) {
+                        max = tmp;
+                    } else {
+                        max = max < tmp ? tmp : max;
+                    }
+                }
+            } else {
+                max = -Infinity;
+            }
+            return max;
+        },
+        min: function () {
+            if (arguments.length > 0) {
+                var min = arguments[0];
+                for (var i = 0; i < arguments.length; i++) {
+                    var tmp = parseFloat(arguments[i]);
+                    if (!tmp) {
+                        min = tmp;
+                    } else {
+                        min = min > tmp ? tmp : min;
+                    }
+                }
+            } else {
+                min = Infinity;
+            }
+            return min;
+        }
+    };
+
+//    调用静态成员，直接使用对象点出来就行了
+    console.log(MyMath.PI);
+    console.log(MyMath.max());
+    console.log(MyMath.min());
+</script>
+</body>
+</html>
