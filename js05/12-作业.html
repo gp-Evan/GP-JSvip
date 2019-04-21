@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>作业练习</title>
+</head>
+<body>
+<script>
+    //1. 重写 Math对象的max和min方法
+    // 不写了
+    var MyMath = {
+        PI: 3.1415926,
+        max: function () {
+        },
+        min: function () {
+        }
+    };
+    //2. 格式化时间  "2019/01/19 18:28:00 周*"
+    // 简单，不写了
+
+    //3. 倒计时   几天几小时几分几秒
+    // 相差时长的转换
+    // 16558956667
+    // 相差的总秒数   16558956667 / 1000
+    // 天数    16558956667 /  1000 / 60 /60 / 24
+    // 小时    16558956667 /  1000 / 60 / 60 % 24  最后一个余数
+    // 分钟    16558956667 /  1000 / 60 % 60
+    // 秒数    16558956667 /  1000 % 60
+
+    function getInterval(start, end) {
+        if (!(start instanceof Date) || !(end instanceof Date)) {
+            console.error('传入的参数类型错误');
+            return false;
+        }
+        var interval = (end - start) / 1000;
+        // 求相差的天数，小时，分钟，秒
+        var day, hour, minute, second;
+        day = Math.floor(interval / 60 / 60 / 24);
+        hour = Math.floor(interval / 60 / 60 % 24);
+        minute = Math.floor(interval / 60 % 60);
+        second = Math.floor(interval % 60);
+        return {
+            day: day,
+            hour: hour,
+            minute: minute,
+            second: second
+        };
+    }
+
+    var d1 = new Date(2018, 10, 10);
+    var d2 = new Date();
+    console.log(getInterval(d1, d2));
+
+    //4. 数组排序   ['ad','abc','a','bdcdef'];  按照元素字符串个数 降序排列
+    var arr3 = ['ad', 'abc', 'a', 'bdcdef'];
+    /*arr3.sort(function (a, b) {
+        return b.length - a.length;
+    });
+    console.log(arr3);*/
+
+    //5. 改写原来的冒泡排序函数，通过自定义方法来控制排序方式【仿Array.sort()】
+    // sort函数内部实现
+    function sortArr(arr, compareFn) {
+        for (var i = 0; i < arr.length - 1; i++) {
+            var isSort = true;
+            for (var j = 0; j < arr.length - 1 - i; j++) {
+                if (compareFn(arr[j], arr[j + 1]) > 0) {
+                    var tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                    isSort = false;
+                }
+            }
+            if (isSort) {
+                break;
+            }
+        }
+        return arr;
+    }
+
+    sortArr(arr3, function (a, b) {
+        return a.length - b.length;
+    });
+    console.log(arr3);
+
+    //6. 模拟array.reverse函数
+    // 以前写过
+    function myReverse(arr) {
+        if (!arr || arr.length == 0) {
+            return [];
+        }
+        for (var i = 0; i < arr.length / 2; i++) {
+            var tmp = arr[i];
+            arr[i] = arr[this.length - i - 1];
+            arr[arr.length - i - 1] = tmp;
+        }
+        return arr;
+    }
+
+    var array = ['a', 'b', 'c'];
+    console.log(myReverse(array));
+
+
+    //7. 工资数组[1500, 1200, 2000, 2100, 1800]，把工资低于2000的元素生成新数组(可用多种关于数组的方法)
+    // 以前的方式
+    // 遍历数组，然后判断，然后push加入新数组
+
+    // 现在的方式
+    var arr4 = [1500, 1200, 2000, 2100, 1800];
+    var newArr4 = arr4.filter(function(item){
+        return item < 2000;
+    });
+    console.log(newArr4);
+    //8. ['c', 'a', 'z', 'a', 'x', 'a'] 找到每一个 a出现的位置  【indexOf/lastIndexOf】
+    var arr = ['c', 'a', 'z', 'a', 'x', 'a'];
+    var index = -1;
+    do {
+        console.log(index = arr.indexOf('a', index + 1));
+    } while (index != -1);
+
+    //9. 数组去重    ['c', 'a', 'z', 'a', 'x', 'a']
+    var array =  ['c', 'a', 'z', 'a', 'x', 'a'];
+    function clear() {
+        var o = {};
+        for (var i = 0; i < array.length; i++) {
+            var item = array[i];
+            if (o[item]) {
+                o[item]++;
+            }else{
+                o[item] = 1;
+            }
+        }
+        var tmpArray = [];
+        for(var key in o) {
+            if (o[key] == 1) {
+                tmpArray.push(key);
+            }else{
+                if(tmpArray.indexOf(key) == -1){
+                    tmpArray.push(key);
+                }
+            }
+        }
+        returm tmpArray;
+    }
+
+    console.log(clear(array));
+
+
+
+
+
+
+</script>
+</body>
+</html>
